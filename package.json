@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev:all": "concurrently \"bun run dev:webhook\" \"bun run dev\" ",
     "dev": "next dev",
+    "dev:webhook": "ngrok http --url=easily-charming-crow.ngrok-free.app 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "6.10.3",
+    "@clerk/nextjs": "^6.14.3",
     "@hookform/resolvers": "^5.0.1",
     "@neondatabase/serverless": "0.10.4",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -41,6 +43,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "concurrently": "9.1.2",
     "date-fns": "^4.1.0",
     "dotenv": "16.4.7",
     "drizzle-orm": "0.39.0",
@@ -56,6 +59,7 @@
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.15.2",
     "sonner": "^2.0.3",
+    "svix": "1.45.1",
     "tailwind-merge": "^3.1.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
