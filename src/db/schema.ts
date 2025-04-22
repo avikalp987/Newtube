@@ -34,6 +34,13 @@ export const videos = pgTable("videos", {
     title: text("title").notNull(),
     description: text("description"),
 
+    muxStatus: text("muxStatus"),
+    muxAssetId: text("mux_asses_id").unique(),
+    muxUploadId: text("mux_upload_id").unique(),
+    muxPlaybackId: text("mux_playback_id").unique(),
+    muxTrackId: text("mux_track_id").unique(),
+    muxTrackStatus: text("mux_track_status"),
+
     // connecting each video to the user who will upload it
     userId: uuid("user_id").references(() => users.id, {onDelete: "cascade"}).notNull(),
 
